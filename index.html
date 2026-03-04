@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title></title>
+</head>
+<body>
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projeto" class="menu-link">Projeto</a>
+            </li>
+            <li>
+                <a href="#contato" class="menu-link">Contato</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/Perfil-portfolio.jpeg" alt="foto de José Victor" class="foto-perfil">
+        <h1>José Victor</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Full Stack</p>
+
+        <div class="btn-container">
+            <a href="assets/curriculo-atualizado.pdf" target="_blank" class="btn-curriculo">
+            Ver Currículo
+            </a>
+        </div>
+        
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+               Sou um desenvolvedor Full Stack apaixonado por tecnologia e por transformar ideias em soluções reais. Como graduado em Análise e Desenvolvimento de Sistemas, tenho facilidade em transitar entre o Front-end (React) e o Back-end (Python/Django) para entregar aplicações eficientes de ponta a ponta. Já apliquei esses conhecimentos no desenvolvimento de plataformas como o 'SmartCash', focado em gestão para supermercados, e o 'Rota Cultural'.
+                ​Acredito que o bom código é aquele que resolve problemas. Por isso, meu foco é unir a base teórica às melhores práticas do mercado para construir arquiteturas robustas e escaláveis, sempre pronto para agregar valor a novas equipes e desafios. 
+            </p>
+        </div>
+    </section>
+
+    <section id="projeto" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="./img/perfil-rota-cultural.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Rota Cultural</h3>
+                    <p class="paragrafo-projetos">O Rota Cultural é um site voltado para facilitar a descoberta de eventos culturais e pontos turísticos em Patos - PB. A plataforma permite que os usuários explorem a cidade, criem roteiros personalizados e salvem seus locais favoritos de forma simples e intuitiva.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/perfil-smart-cash.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Smart Cash</h3>
+                    <p class="paragrafo-projetos">O SmartCash é um sistema voltado para facilitar a gestão de supermercados. A plataforma tem como objetivo simplificar o controle financeiro e administrativo do dia a dia, oferecendo uma interface organizada e intuitiva para o gerenciamento do negócio.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contato" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite dua Mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+        </form>
+    </section>
+
+    <script>
+        function enviarWhats(event){
+            event.preventDefault()
+
+        const nome = document.getElementById('nome').value;
+        const mensagem = document.getElementById('mensagem').value;
+        const telefone = '5583981639354'
+
+        const texto = `OLÁ! Me chamo ${nome} ${mensagem}`
+        const msgFormatada = encodeURIComponent(texto)
+
+        const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+        console.log(url)
+
+        window.open(url, '_blank')
+    }
+
+    </script>
+    
+</body>
+
+</html>
